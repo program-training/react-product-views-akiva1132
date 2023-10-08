@@ -10,7 +10,8 @@
     flex-direction: column;
 }
 img{
-    height: 250px;
+
+    height: auto;
 }
 .details{
     padding: 10px;

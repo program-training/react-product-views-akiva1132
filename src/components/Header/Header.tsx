@@ -1,15 +1,17 @@
 import { useState } from "react";
 import "./Header.css";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router-dom";
+import { LuFileStack } from "react-icons/lu";
 
 export function Header() {
-  return (
-    <>
-      <div id="Header">
-        <p id="left">left</p>
-        <p id="right">right</p>
-      </div>
-      <Outlet />
-    </>
-  );
+  return <div>
+  <div id="Header">
+    <p id="left">
+    <Link id="iconAllProduct" to={"/"}><LuFileStack/></Link>
+      </p>
+    <p id="right">right</p>
+  </div>
+<Outlet/>
+  </div>
+    
 }

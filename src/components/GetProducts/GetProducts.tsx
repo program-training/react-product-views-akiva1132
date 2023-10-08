@@ -7,7 +7,7 @@ import { TbCards } from "react-icons/tb";
 import { AiOutlineTable } from "react-icons/ai";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { ProductsList } from "../ProductsList/ProductsList";
-import { Link } from "react-router-dom";
+
 export function AllProductCard() {
   const [displayMode, setDisplayMode] = useState(1);
   const [productsData, setProductsData] = useState<Product[]>([]);
@@ -22,7 +22,7 @@ export function AllProductCard() {
       <h3>products in stack</h3>
       <div id="setDisplayMode">
         <ul>
-          <a onClick={() => setDisplayMode(1)}>
+          <a className="buttonDisplayMode" onClick={() => setDisplayMode(1)}>
             <TbCards />
           </a>
           <a onClick={() => setDisplayMode(2)}>
