@@ -1,0 +1,25 @@
+.card{
+    font-size: small;
+    text-decoration: none; 
+    color: inherit;
+    display: flex;
+    padding: 20px;
+    width: 300px;
+    min-height: 500px;
+    border: 1px silver solid;
+    flex-direction: column;
+}
+img{
+    height: 250px;
+}
+.details{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+p{
+    margin: 20px;
+}
+#price{
+    font-size: 30px;
+}

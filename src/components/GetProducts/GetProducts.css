@@ -1,0 +1,16 @@
+ul{
+    width: 100px;
+    list-style-type: disc;
+    display: flex;
+    justify-content: space-around;
+}
+#setDisplayMode{
+    width: 100px;
+    display: flex;
+    margin: 20px;
+}
+a{
+    cursor: pointer;
+    margin: 10px;
+    font-size: 30px;
+}

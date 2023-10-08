@@ -1,11 +1,12 @@
+import { RouterProvider } from "react-router";
+import { router } from "./route";
 import "./App.css";
-import { Example } from "./components/Example/Example";
-
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <>
-      <Example />{" "}
-    </>
+      <BrowserRouter>
+          <RouterProvider router={router} />
+      </BrowserRouter>
   );
 }
 
