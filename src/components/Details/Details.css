@@ -17,9 +17,11 @@ img{
     width: 90%;
 }
 #ulImg{
+    /* border: 1px black solid; */
     min-width: 90%;
 }
 li{
+
     cursor: pointer;
     list-style-type: none; 
 }

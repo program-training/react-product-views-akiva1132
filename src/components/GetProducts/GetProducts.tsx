@@ -9,7 +9,8 @@ import { AiOutlineUnorderedList } from "react-icons/ai";
 import { ProductsList } from "../ProductsList/ProductsList";
 
 export function AllProductCard() {
-  const [displayMode, setDisplayMode] = useState(1);
+  const [displayMode, setDisplayMode] = useState(localStorage.getItem("displayMode")?
+   localStorage.getItem("displayMode"):"1");
   const [productsData, setProductsData] = useState<Product[]>([]);
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -22,20 +23,33 @@ export function AllProductCard() {
       <h3>products in stack</h3>
       <div id="setDisplayMode">
         <ul>
-          <a className="buttonDisplayMode" onClick={() => setDisplayMode(1)}>
+          <a
+            className="buttonDisplayMode"
+            onClick={() => {
+              setDisplayMode("1"), localStorage.setItem("displayMode", "1");
+            }}
+          >
             <TbCards />
           </a>
-          <a onClick={() => setDisplayMode(2)}>
+          <a
+            onClick={() => {
+              setDisplayMode("2"), localStorage.setItem("displayMode", "2");
+            }}
+          >
             <AiOutlineTable />
           </a>
-          <a onClick={() => setDisplayMode(3)}>
+          <a
+            onClick={() => {
+              setDisplayMode("3"), localStorage.setItem("displayMode", "3");
+            }}
+          >
             <AiOutlineUnorderedList />
           </a>
         </ul>
       </div>
-      {displayMode === 1 ? ProductsCard(productsData) : null}
-      {displayMode === 2 ? ProductsTable(productsData) : null}
-      {displayMode === 3 ? ProductsList(productsData) : null}
+      {displayMode === "1" ? ProductsCard(productsData) : null}
+      {displayMode === "2" ? ProductsTable(productsData) : null}
+      {displayMode === "3" ? ProductsList(productsData) : null}
     </div>
   );
 }

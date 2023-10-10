@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Card.css";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 export interface Product {
   id: number;
   title: string;
@@ -18,14 +18,15 @@ interface Props {
   obj: Product;
 }
 export function Card({ obj }: Props) {
+  const navigate = useNavigate()
   return (
-    <Link className="card" to={"/details/" + obj.id}>
+    <div onClick={()=>navigate(`/details/${obj.id}`)} className="card">
       <img src={obj.images[0]} alt="img" />
       <div className="details">
         <h3>{obj.title}</h3>
         <p>{obj.description}</p>
         <p id="price">{obj.price} $</p>
       </div>
-    </Link>
+    </div>
   );
 }
